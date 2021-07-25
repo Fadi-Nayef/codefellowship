@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+</head>
+<body>
+<p>Sign Up</p>
+
+<form method="POST" th:action="@{/SignUp}">
+  <div><label for="username">Username : <input id="username" name="username" type="text"></label></div>
+  <div><label for="password">Password : <input id="password" name="password" type="text"></label></div>
+  <div><input type="submit" value="Submit"/></div>
+</form>
+</body>
+</html>

@@ -5,12 +5,15 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class ApplicationUser implements UserDetails {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 private Long id;
+
+    @Column(unique = true)
     private String username;
     private String password;
 
@@ -20,8 +23,20 @@ private String stName;
     private String lastName;
 private String dob;
 
-//    @Column(unique = true)
 
+    @OneToMany( mappedBy = "applicationUser")
+   private List<Post> posts;
+
+    public ApplicationUser(Long id, String username, String password, String bio, String stName, String lastName, String dob, List<Post> posts) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.bio = bio;
+        this.stName = stName;
+        this.lastName = lastName;
+        this.dob = dob;
+        this.posts = posts;
+    }
 
     public ApplicationUser(String username, String password) {
         this.password = password;
@@ -35,6 +50,30 @@ private String dob;
         this.dob = dob;
         this.password = password;
         this.username = username;
+    }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public String getStName() {
+        return stName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getDob() {
+        return dob;
     }
 
     public void setBio(String bio) {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>User Data</title>
@@ -7,5 +7,9 @@
 <body>
 <h1 class="heading">You're logged in! "@{showUser.username}" I think...</h1>
 
+<ul th:each="post : ${posts}">
+    <li th:text="${post.getBody}"></li>
+    <li th:text="${post.getCreatedAt}"></li>
+</ul>
 </body>
 </html>

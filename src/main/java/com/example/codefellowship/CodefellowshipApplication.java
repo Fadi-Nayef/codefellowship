@@ -6,7 +6,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 
 @SpringBootApplication
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-
+//@EnableJpaRepositories(basePackageClasses = ApplicationUserRepository.class)
 public class  CodefellowshipApplication {
 
 	public static void main(String[] args) {

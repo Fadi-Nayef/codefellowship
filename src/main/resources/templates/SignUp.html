@@ -7,10 +7,16 @@
 <body>
 <p>Sign Up</p>
 
-<form method="POST" th:action="@{/SignUp}">
-  <div><label for="username">Username : <input id="username" name="username" type="text"></label></div>
-  <div><label for="password">Password : <input id="password" name="password" type="text"></label></div>
-  <div><input type="submit" value="Submit"/></div>
+<form method="POST" th:action="@{/signup}">
+  <div><label for="stName"> first name : <input id="stName" name="stName" type="text"></label></div>
+  <div><label for="username">username : <input id="username" name="username" type="text"></label></div>
+  <div><label for="bio">bio : <input id="bio" name="bio" type="text"></label></div>
+  <div><label for="password">password : <input id="password" name="password" type="password"></label></div>
+  <div><label for="lastName">lastName : <input id="lastName" name="lastName" type="text"></label></div>
+    <div><label for="dob">dob : <input id="dob" name="dob" type="text"></label></div>
+
+    <div><input type="submit" value="Submit"/></div>
+
 </form>
 </body>
 </html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>User Data</title>
+</head>
+<body>
+<h1 class="heading">You're logged in! "@{showUser.username}" I think...</h1>
+<div>
+
+<ul th:each="user : ${users}">
+    <li th:text="${user.getUsername}"></li>
+    <li th:text="${user.getDob}"></li>
+</ul>
+</div>
+    <div>
+<ul th:each="user :  ${users.getPosts}">
+    <li th:text="${user}"></li>
+</ul>
+    </div>
+</body>
+</html>

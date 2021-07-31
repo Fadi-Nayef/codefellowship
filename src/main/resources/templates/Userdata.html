@@ -6,10 +6,17 @@
 </head>
 <body>
 <h1 class="heading">You're logged in! "@{showUser.username}" I think...</h1>
+<div>
 
-<ul th:each="post : ${posts}">
-    <li th:text="${post.getBody}"></li>
-    <li th:text="${post.getCreatedAt}"></li>
+<ul th:each="user : ${users}">
+    <li th:text="${user.getUsername}"></li>
+    <li th:text="${user.getDob}"></li>
 </ul>
+</div>
+    <div>
+<ul th:each="user :  ${users.getPosts}">
+    <li th:text="${user}"></li>
+</ul>
+    </div>
 </body>
 </html>

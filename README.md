@@ -30,3 +30,6 @@
 - A logged-in user should be able to create a Post, and a post should belong to the user that created it.
  >hint: this is a relationship between two pieces of data
 - A user’s posts should be visible on their profile page.
+# lab 17 
+- Route `\addpost` to add new post
+- Route `\myprofile` show the renderd posts and users data

@@ -30,7 +30,7 @@ public class PostController {
 public String showPost(Model m ){
     List<Post>  post = postRepository.findAll();
     m.addAttribute("posts",post);
-    return "Userdata";
+    return "Home";
 }
 
    @PostMapping("/post")
@@ -50,7 +50,15 @@ public RedirectView addpost (String body ){
         postRepository.save(postBody);
    return new RedirectView("/");
    }
+@GetMapping("/myprofile")
+    public String profile(Model m ){
 
+    UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    ApplicationUser user = applicationUserRepository.findUserByUsername( userDetails.getUsername());
+
+    m.addAttribute("users",user);
+    return "Userdata";
+}
 //   @GetMapping("/post")
 //   public String showPost (Module m , String body, String createdAt , ){
 //
